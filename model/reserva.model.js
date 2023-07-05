@@ -13,11 +13,11 @@ const Reserva = sequelize.define(
       allowNull: false,
       unique: true,
     },
-    nombre: {
+    apellido: {
       type: DataTypes.STRING(100),
       allowNull: false,
     },
-    apellido: {
+    nombre: {
       type: DataTypes.STRING(100),
       allowNull: false,
     },
@@ -41,6 +41,10 @@ const Reserva = sequelize.define(
       type: DataTypes.STRING(100),
       allowNull: false,
     },
+    costo_reserva: {
+      type: DataTypes.REAL,
+      allowNull: false,
+    },
     estado: {
       type: DataTypes.BOOLEAN,
       defaultValue: true,
@@ -54,8 +58,7 @@ const Reserva = sequelize.define(
       defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
     },
     deletedAt: {
-      type: DataTypes.DATE,
-      defaultValue: false,
+      type: DataTypes.BOOLEAN,
     },
   },
   {
